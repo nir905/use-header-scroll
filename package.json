@@ -1,8 +1,8 @@
 {
   "name": "use-header-scroll",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "git init",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Nir Avraham",
   "license": "MIT",
   "private": false,

@@ -30,7 +30,7 @@ and apply the height on the header
 
 ```
 import React from "react";
-import useHeaderScroll from "./index";
+import useHeaderScroll from "use-header-scroll";
 
 const Demo = () => {
   const height = useHeaderScroll({ min: 50, max: 120, endOffset: 550 });
