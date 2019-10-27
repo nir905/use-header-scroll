@@ -1,6 +1,6 @@
 {
   "name": "use-header-scroll",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "git init",
   "main": "index.js",
   "author": "Nir Avraham",
@@ -23,5 +23,9 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nir905/use-header-scroll"
   }
 }
