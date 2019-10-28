@@ -25,6 +25,8 @@ var useHeaderScroll = function useHeaderScroll(_ref) {
       _ref$target = _ref.target,
       target = _ref$target === void 0 ? window : _ref$target,
       endOffset = _ref.endOffset;
+  var lastScrollPosition = (0, _react.useRef)(0);
+  var tick = (0, _react.useRef)(false);
 
   var _useState = (0, _react.useState)(max),
       _useState2 = _slicedToArray(_useState, 2),
@@ -32,11 +34,19 @@ var useHeaderScroll = function useHeaderScroll(_ref) {
       setHeight = _useState2[1];
 
   var calcHeight = (0, _react.useCallback)(function () {
-    var percent = 1 - Math.min(1, window.scrollY / endOffset);
-    setHeight(getInRange(percent, min, max));
-  }, [min, max, endOffset]);
+    lastScrollPosition.current = target.scrollY;
+
+    if (!tick.current) {
+      window.requestAnimationFrame(function () {
+        var percent = 1 - Math.min(1, lastScrollPosition.current / endOffset);
+        setHeight(getInRange(percent, min, max));
+        tick.current = false;
+      });
+      tick.current = true;
+    }
+  }, [min, max, endOffset, target]);
   (0, _react.useEffect)(function () {
-    target.addEventListener("scroll", calcHeight);
+    target.addEventListener("scroll", calcHeight, false);
     return function () {
       return target.removeEventListener("scroll", calcHeight);
     };
