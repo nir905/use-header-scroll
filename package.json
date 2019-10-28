@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "publish:npm": " babel index.js -d dist --copy-files"
+    "build": " babel index.js -d dist --copy-files",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
