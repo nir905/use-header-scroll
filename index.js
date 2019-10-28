@@ -6,7 +6,7 @@ const useHeaderScroll = ({ min, max, target = window, endOffset }) => {
   const [height, setHeight] = useState(max);
 
   const calcHeight = useCallback(() => {
-    const percent = 1 - Math.min(1, window.scrollY / endOffset);
+    const percent = 1 - Math.min(1, target.scrollY / endOffset);
     setHeight(getInRange(percent, min, max));
   }, [min, max, endOffset]);
 
