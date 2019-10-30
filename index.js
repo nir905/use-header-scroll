@@ -11,8 +11,8 @@ const useHeaderScroll = ({ min, max, target = window, endOffset }) => {
   }, [min, max, endOffset]);
 
   useEffect(() => {
-    target.addEventListener("scroll", calcHeight);
-    return () => target.removeEventListener("scroll", calcHeight);
+    target.addEventListener("scroll", calcHeight, { passive: true });
+    return () => target.removeEventListener("scroll", calcHeight, { passive: true });
   }, [target, calcHeight]);
 
   return height;
