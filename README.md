@@ -21,37 +21,37 @@ or
 ## Using
 
 ### Basic - useHeaderScroll
-Import
 
-`import useHeaderScroll from "use-header-scroll";`
+```
+// Import
+import useHeaderScroll from "use-header-scroll";
 
-Call the hook
+// Call the hook
+const height = useHeaderScroll({ min: 50, max: 120, endOffset: 550 });
 
-`const height = useHeaderScroll({ min: 50, max: 120, endOffset: 550 });`
-
-and apply the height on the header
-
-`<header style={{position: 'fixed', height}}>Header</header>`
+// Apply height on header
+return <header style={{position: 'fixed', height}}>Header</header>
+```
 
 <br/>
 
 
 ### Advance - useMultiScroll
 
-Import
+```
+// Import
+import { useMultiScroll } from "use-header-scroll";
 
-`import { useMultiScroll } from "use-header-scroll";`
+// Call the hook
+const [headerHeight, fontSize] = useMultiScroll({
+  ranges: [[50, 300], [13, 40]],
+  endOffset: 550
+});
 
-Call the hook
+// Apply height and font size on header
+return <header style={{position: 'fixed', height: headerHeight, fontSize}}>Header</header>
+```
 
-` const [headerHeight, fontSize] = useMultiScroll({
-    ranges: [[50, 300], [13, 40]],
-    endOffset: 550
-  });`
-
-and apply the height on the header
-
-`<header style={{position: 'fixed', height: headerHeight, fontSize}}>Header</header>`
 
 ---
 
@@ -102,6 +102,7 @@ export default Demo;
 `endOffset` - the scroll offset to fully minimize header
 
 <br/>
+
 ###  useMultiScroll
 
 `ranges` - array of arrays `[[min1, max1], [min2, max2]]`
