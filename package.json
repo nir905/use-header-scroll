@@ -1,13 +1,13 @@
 {
   "name": "use-header-scroll",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "git init",
   "main": "dist/index.js",
   "author": "Nir Avraham",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": " babel index.js -d dist --copy-files",
+    "build": "babel src --out-dir dist ",
     "prepublish": "npm run build"
   },
   "devDependencies": {
