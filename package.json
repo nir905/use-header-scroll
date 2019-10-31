@@ -1,7 +1,7 @@
 {
   "name": "use-header-scroll",
   "version": "0.0.6",
-  "description": "git init",
+  "description": "Control size of elements while scrolling",
   "main": "dist/index.js",
   "author": "Nir Avraham",
   "license": "MIT",
